@@ -13,7 +13,7 @@ Hit "f" on the main screen for a full-screen or select from the hamburger menu i
 
 ### PDF of the Slides
 
-A [PDF](GGA_training_session_3_trial_design.pdf) file version of the slides is also available.
+A [PDF](trial_protocols_and_best_data_practices.pdf) file version of the slides is also available.
 
 ## Modifying and Building the Slides
 
