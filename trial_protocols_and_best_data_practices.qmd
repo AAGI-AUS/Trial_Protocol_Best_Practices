@@ -1,0 +1,272 @@
+---
+title: "GGA training session 3 -- Trial Protocols and Best Data Practices"
+author: "Adam H. Sparks"
+date: "2024-09-05"
+institute: Curtin Biometry and Agricultural Data Analytics
+from: markdown+emoji
+format:
+  aagi-revealjs:
+    incremental: true
+    html-q-tags: true
+bibliography: references.bib
+---
+
+```{r}
+#| label: load
+#| include: false
+#| message: false
+
+library(AAGIThemes)
+library(gt)
+library(pander)
+library(patchwork)
+library(qrcode)
+library(tidyverse)
+
+# set ggplot2 theme
+theme_set(theme_aagi())
+```
+
+## On-Farm Research Success
+
+1. Ask the Right Question (refer to Mark's session this AM)
+2. **Ask what data will be collected**
+3. Consider paddock history and variation
+4. Pick the right trial design (refer to Point 3 above & previous session)
+   1. Include a control treatment for a baseline!
+5. Replicate and randomise (refer to previous session)
+6. **Collect the data**
+7. Share the raw data with AAGI
+
+## Ensuring You Have Quality Data
+
+1. Ensure the trial design is valid and fit for purpose.
+2. Ensure the trial design is recorded correctly.
+3. Identify and control sources of noise.
+4. Implement protocols to avoid mistakes in running the trial and recording of observations.
+5. **Always** provide the raw data to the biometrician.
+6. Record ancillary details.
+
+## Don't Optimise for Convenience
+
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/GrazingTrial1.png){fig-align="center" height=400}
+
+## Don't Optimise for Convenience
+
+![<span style="font-size:0.25em;">Source: Andrew Van Burgel, DPIRD</span>](./assets/Andrew.png){fig-align="center" height=400}
+
+## Ensure the Design is Recorded Correctly
+
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/Canowindra.png){fig-align="center" height=400}
+
+## Ensure the Design is Recorded Correctly
+
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/Canowindra2.png){fig-align="center" height=400}
+
+## Controlling Measurement Error and Uncertainty
+
+![<span style="font-size:0.25em;">Source:SVGRepo</span>](./assets/dartboard-and-dart-svgrepo-com.svg){fig-align="center" height=400}
+
+## Controlling Measurement Error and Noise
+
+:::: {.columns}
+::: {.column width="40%"}
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/10760-tgp-4017-plus-2-data-logger.jpg)
+:::
+
+::: {.column width="60%"}
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/aFlh_2rw.jpeg)
+:::
+::::
+
+## Controlling Measurement Error and Noise
+
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/TT1.png)
+
+## Controlling Measurement Error and Noise
+
+:::: {.columns}
+::: {.column width="40%"}
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/TT2.png)
+:::
+
+::: {.column width="60%"}
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/TT3.png)
+:::
+::::
+
+## Always Provide the Full Set of Raw Data
+
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/MouseDamage.png)
+
+## Record Ancillary Details
+
+![<span style="font-size:0.25em;">Source: Dr Ben Biddulph, DPIRD</span>](./assets/FIS.png)
+
+## Check Your Data
+
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/RLN.png)
+
+# Effective Use of Spreadsheets for Sharing Data With AAGI{background-image="_extensions/AAGI-AUS/aagi/assets/title-slide-main.png" background-size="1050px auto" background-position="50% 85%"}
+
+## Best Practices to Follow
+
+:::: {.columns}
+::: {.column width="70%"}
+- All columns supplied with the trial design should be retained
+
+- Every plot needs a unique identifier (*e.g.*, plot number)
+
+- Avoid copy-paste (easy to introduce errors)
+
+- Ensure embedded equations reference the correct columns
+  - Or better yet, don't do calculations in the spreadsheet at all
+:::
+
+::: {.column width="30%"}
+![<span style="font-size:0.25em;">Source: Dr Karyn Reeves, SAGI-West</span>](./assets/Tweet.png)
+:::
+::::
+
+## Basic Rules for Data in Spreadsheets
+
+- Be Consistent
+  - Use the same layout if you have multiple files
+  - Use the same variable names (also if you have multiple files)
+  - Only use one variable name, *e.g.*, "S10" is different than "S 10"
+
+::: aside
+<span style="font-size:10px">
+From @Broman2018
+</span>
+:::
+
+## Choose Good Names for Things
+
+
+| Good Name | Good Alternative | Avoid |
+------------|------------------|--------
+| max_temp_C | MaxTemp | Maximum Temp (˚C) |
+| precipitation_mm | precip | precmm |
+| mean_year_growth | MeanYearGrowth | Mean growth/year |
+| yield_kg_ha | yield | yield kg/ha |
+| observation_o1 | first_observation | 1st Obs. |
+
+
+::: aside
+<span style="font-size:10px">
+After @Broman2018
+</span>
+:::
+
+:::notes
+The good names include the measured variable and the units.
+The alternatives are less descriptive but are clear and do not have spaces in them.
+The avoid have spaces and upper and lower case or are ambiguous.
+:::
+
+## Write Dates as YYYY-MM-DD (ISO 8601)
+
+
+![<span style="font-size:0.25em;">A spreadsheet with inconsistent date formats. This spreadsheet does not adhere to recommendations for consistency of date format. From @Broman2018. Also see <https://xkcd.com/1179>.</span>](./assets/Broman_and_Woo_figure1.png)
+
+## No Empty Cells
+
+![<span style="font-size:0.25em;">Examples of spreadsheets that violate the "no empty cells" recommendation. (a) A spreadsheet where only the first of several repeated values was included. (b) A spreadsheet with a complicated layout and some implicit column headers, from @Broman2018.</span>](./assets/Broman_and_Woo_figure2.png)
+
+## Put Just One Thing in a Cell
+
+- *e.g.*, Don't use "rep-plot" for a header and use "1-1", "1-2"..."2-1", in the column, etc.
+- Do use "rep" and "plot" as headers and have the values in separated columns
+
+## Make It a Rectangle
+
+![<span style="font-size:0.25em;">Examples of spreadsheets with nonrectangular layouts. These layouts are likely to cause problems in analysis, from @Broman2018.</span>](./assets/Broman_and_Woo_figure5.png)
+
+Example A, what not to do.
+
+:::notes
+Keep your data tidy and in a rectangle so that it's easy to analyse when you send it to AAGI.
+These examples have many empty cells in-between values.
+Computers don't like these sorts of holes in the data (and thus neither do the biometricians using the computers).
+:::
+
+## Make It a Rectangle
+
+![<span style="font-size:0.25em;">A spreadsheet with two header rows. It is better to have a single header row, from @Broman2018.</span>](./assets/Broman_and_Woo_figure7.png)
+
+Example B, what not to do.
+
+:::notes
+This is a common example of having two header rows.
+Following is an example of how to integrate this header row into a column for a nice rectangular data set.
+:::
+
+## Make It a Rectangle
+
+![<span style="font-size:0.25em;">An example spreadsheet of the previous example's data in a rectangular layout, from @Broman2018.</span>](./assets/Broman_and_Woo_figure8.png)
+
+Yes, do this!
+
+:::notes
+We can see here that we've incorporated the "week" heading into a column, yes, it's repeated but that's what the computer will look for when the analysis is run and will not affect anything.
+In fact, it's preferred!
+:::
+
+## Create a Data Dictionary
+
+![<span style="font-size:0.25em;">An example data dictionary, from @Broman2018.</span>](./assets/Broman_and_Woo_figure9.png)
+
+:::notes
+My suggestion is that this goes in the trial protocol that is provided to AAGI with the data.
+:::
+
+## Do Not Use Colour as Data
+
+![<span style="font-size:0.25em;">Highlighting in spreadsheets.(a) A potential outlier indicated by highlighting the cell.(b) The preferred method for indicating outliers, via an additional column, from @Broman2018.</span>](./assets/Broman_and_Woo_figure10.png)
+
+## Save Data in Plain Text Files (*e.g.*, CSV)
+
+![<span style="font-size:0.25em;">(a) An example spreadsheet. (b) The same data as a plain text file in CSV format, from @Broman2018.</span>](./assets/Broman_and_Woo_figure11.png)
+
+## Lastly
+
+- No calculations in the raw data file
+- Make backups
+- Use data validation to avoid errors
+
+::: aside
+<span style="font-size:10px">
+From @Broman2018
+</span>
+:::
+
+:::notes
+Avoid calculations in the raw data that you send to AAGI.
+Just provide the raw data, AAGI will perform the calcuations to create mean values and other summaries as necessary.
+Performing calculations in the spreadsheet can lead to errors and obscure the raw data if it's not provided to AAGI pre-calculated.
+
+Make backups!
+
+Excel can validate your data.
+I won't go into it here, but it has the capabilities to enforce cell types to help you ensure that you don't put a date in a yield column that should be a number not a date, or a weed name (text) in a weed count column (numeric).
+:::
+
+## Exercise
+
+::: {.callout-warning icon=false .nonincremental}
+## {{< fa clock >}} Exercise (20 min)
+Working with your partner on the experiment you designed this morning.
+
+1. Create a trial protocol that details the:
+   1. Treatments and
+   2. Data to be collected.
+2. Draw or list the spreadsheet headings for the data you will be collecting to send to AAGI.
+   1. Describe the date format you will use,
+   2. Describe what you will use to describe missing data and
+   3. Describe what descriptions need to be included in the data dictionary/protocol for AAGI to refer to.
+:::
+
+# Thank You{background-image="_extensions/AAGI-AUS/aagi/assets/title-slide-main.png" background-size="1050px auto" background-position="50% 85%"}
+
+## References
